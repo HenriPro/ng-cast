@@ -1,6 +1,7 @@
 function VideoListController() {
   var ctrl = this;
-  console.log(this.videos);
+  console.log('videoList');
+  console.log(this);
   //ctrl.videos = window.exampleVideoData;
 }
 

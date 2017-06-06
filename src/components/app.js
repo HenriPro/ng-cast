@@ -1,17 +1,17 @@
-function AppController() {
-  var ctrl = this;
+function AppController1() {
 
-  ctrl.videos = window.exampleVideoData;
-  ctrl.currentVideo = window.exampleVideoData[0];
+  this.videos = window.exampleVideoData;
+  this.currentVideo = window.exampleVideoData[0];
   //console.log(this.videos);
+  console.log('app currentVideo')
   console.log(this.currentVideo);
 
 
-  ctrl.selectVideo = function() {
+  this.selectVideo = function() {
     console.log('App is selecting a video');
     console.log(this.videos);
   };
-  ctrl.searchResults = function() {
+  this.searchResults = function() {
     console.log('App is searching results');
   };
 
@@ -19,10 +19,10 @@ function AppController() {
 }
 
 angular.module('video-player')
-  .controller('AppController', AppController)
+  .controller('AppController2', AppController1)
   .component('app', {
 
     templateUrl: 'src/templates/app.html',
-    controller: AppController
+    controller: AppController1
 
 });
