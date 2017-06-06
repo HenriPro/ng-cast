@@ -1,28 +1,21 @@
-function AppController1() {
+function AppController() {
 
   this.videos = window.exampleVideoData;
   this.currentVideo = window.exampleVideoData[0];
-  //console.log(this.videos);
-  console.log('app currentVideo')
-  console.log(this.currentVideo);
 
-
-  this.selectVideo = function() {
-    console.log('App is selecting a video');
-    console.log(this.videos);
+  this.selectVideo = (video) => {
+    this.currentVideo = video;
   };
-  this.searchResults = function() {
+  this.searchResults = () => {
     console.log('App is searching results');
   };
-
-  // return this;
 }
 
 angular.module('video-player')
-  .controller('AppController2', AppController1)
+  .controller('AppController', AppController)
   .component('app', {
 
     templateUrl: 'src/templates/app.html',
-    controller: AppController1
+    controller: AppController
 
 });
