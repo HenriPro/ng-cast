@@ -1,14 +1,13 @@
-function VideoPlayerController()  {
-    var ctrl = this;
-
-    console.log('videoPlayer');
-    console.log(this);
+function VideoPlayerController() {
+    this.videoUrl = () => {
+      return `https://www.youtube.com/embed/${this.currentVideo.id.videoId}`;
+    };
   }
 
 angular.module('video-player')
 
 .component('videoPlayer', {
-  // TODO
+
   templateUrl: 'src/templates/videoPlayer.html',
   bindings: {
     currentVideo: '<'
