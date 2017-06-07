@@ -1,4 +1,4 @@
-function AppController() {
+function AppController(youTube) {
 
   this.videos = window.exampleVideoData;
   this.currentVideo = window.exampleVideoData[0];
@@ -6,9 +6,12 @@ function AppController() {
   this.selectVideo = (video) => {
     this.currentVideo = video;
   };
-  this.searchResults = () => {
-    console.log('App is searching results');
+  this.searchResults = (videos) => {
+    console.log('App found these search results: ', videos);
+    this.videos = videos;
   };
+
+  youTube.search('FRENCH BULLDOG PUPPIES', this.searchResults);
 }
 
 angular.module('video-player')
