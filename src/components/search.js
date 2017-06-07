@@ -1,8 +1,16 @@
-function SearchController() {
+function SearchController(youTube) {
+  
   this.search = () => {
-    console.log(this.searchText);
-    youTube.search(searchText, (data) => {console.log('got utube data: ', data);});
+    youTube.search(this.searchText, this.searchResults);
+  }
+
+  this.clear = () => {
     this.searchText = '';
+  }
+
+  this.searchAndClear = () => {
+    this.search();
+    this.clear(); 
   }
 }
 
@@ -11,6 +19,9 @@ angular.module('video-player')
 .component('search', {
 
   templateUrl: 'src/templates/search.html',
-  controller: SearchController
+  controller: SearchController,
+  bindings: {
+    searchResults: '<'
+  }
 
 });
