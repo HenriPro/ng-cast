@@ -1,8 +1,9 @@
 <div ng-controller="SearchController" class="search-bar form-inline">
   <form ng-submit="$ctrl.clear()" >
     <input class="form-control" type="text" ng-model="$ctrl.searchText" ng-change="$ctrl.search()" />
-    <button class="btn" ng-click="$ctrl.searchAndClear()">
-      <span class="glyphicon glyphicon-search"></span>
-    </button>
+    
   </form>
+  <button class="btn" ng-click="$ctrl.searchAndClear()">
+      <span class="glyphicon glyphicon-search"></span>
+  </button>
 </div>
